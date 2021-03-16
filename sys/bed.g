@@ -1,13 +1,11 @@
-; Bed Mesh Leveling
+; Bed Mesh Leveling - called with G32
 
-G28 Z
+if !move.axes[0].homed || !move.axes[1].homed || !move.axes[2].homed
+  G28                       ; Home all if needed
 
-G1 S2 Z3 F5000		; lift Z 3mm
+G1 Z3 F5000                 ; lift Z 3mm
+G29 S2                      ; clear heatmap
+M561                        ; clear any bed transform
+G29                         ; probe the bed and enable compensation
 
-G29
-
-;disable mesh leveling, needs to be enabled at the start of your print and disabled again when finished.
-G29 S2
-
-; Park the head
-G1 X150 Y-49 F50000
+M98 P"/macros/Park Head"

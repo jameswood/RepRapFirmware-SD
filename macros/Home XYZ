@@ -1,12 +1,7 @@
-; homeall.g
-; called to home all axes
+; called to home all axes except Coupler
 
-;M98 Phomec.g			; Home C
+M98 P"homex.g"            ; Home X
+M98 P"homey.g"            ; Home Y
+M98 P"homez.g"            ; Home Z
 
-M98 Phomey.g			; Home Y
-
-M98 Phomex.g			; Home X
-
-M98 Phomez.g			; Home Z
-
-G1 X150 Y-50 F15000		; Park
+M98 P"/macros/Park Head"
