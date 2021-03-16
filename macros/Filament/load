@@ -1,0 +1,3 @@
+M116            ; wait for hotend temp
+M300 S1000 P100 ; beep
+M84 E0          ; extruder motors off

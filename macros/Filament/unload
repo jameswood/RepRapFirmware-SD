@@ -1,0 +1,7 @@
+T0
+M116                            ; wait for hotend temp
+G1 E20 F500                     ; Extrude 10mm slowly
+G1 E-100 F1500                  ; Retract 100mm faster
+G10 R0 S0                       ; set hotend temperature (R is standby)
+M300 S1000 P100                 ; beep
+M84 E0                          ; turn extruder motors off
