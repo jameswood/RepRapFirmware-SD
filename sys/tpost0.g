@@ -1,14 +1,4 @@
 ; tpost0.g
 ; called after tool 0 has been selected
-
-;heatup
-M116 P0
-
-;prime nozzle
-;M98 P"prime.g"
-
-;mesh levelling on
-G29 S1
-
-;PCF fan on
-M106 P2 R2
+M116 P0        ; heatup
+M98 P"tpost.g" ; standards
