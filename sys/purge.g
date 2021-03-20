@@ -15,12 +15,17 @@ G1 X331.0 Y160
 ;Park for purge
 M98 P"/macros/Park Head"
 
-;Purge
-G92 E0
-G1 E10 F1000
-G92 E0
-G1 E-2 F2750
-G4 S4
+;Purge/retract
+G11          ; unretract
+G1 E-10 F500 ; jam all the things??
+G1 E8  F750
+G1 E-8 F1000
+G1 E6  F1500
+G1 E-6 F1750
+G1 E4  F2000
+G1 E-4 F2500
+G1 E-2 F3000
+G4 S2        ; wait for ooze
 
 ;Run Out
 G1 X331 Y160 F50000

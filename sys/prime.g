@@ -13,11 +13,9 @@ G1 X{331.0+4} Y155
 M98 P"/macros/Park Head"
 
 ;Prime
-G92 E0
-G1 E10 F1000
-G1 E-1 F1000
-G92 E0
-G4 S2 ; wait for ooze
+G1 E20 F1000 ; fill 'er up
+G10          ; retract
+G4 S2        ; wait for ooze
 
 ;Run Out
 G1 X331 Y160 F50000
