@@ -1,0 +1,21 @@
+;preheat all
+T0 P0
+T1 P0
+T2 P0
+T3 P0
+T-1 P0
+
+;load all
+T0 P0
+M701 S"PLAP - Esun"
+
+T1 P0
+M701 S"PLAP - Esun 1"
+
+T2 P0
+M701 S"PLAP - Esun 2"
+
+T3 P0
+M701 S"PLAP - Esun 3"
+
+T-1 P0

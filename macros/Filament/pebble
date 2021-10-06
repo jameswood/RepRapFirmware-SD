@@ -1,0 +1,21 @@
+M280 P7 S800					; Launch previous Pebble
+M98 P"0:/macros/Park Head"
+M116							; wait for temps
+M280 P7 S2200					; Reset Servo
+G4 P300							; Wait for servo
+G1 X333 Y130 F24000				; Move to Pebbletowne
+
+M106 S255						; Cooling 100%
+G1 E24 F300	 					; Produce Pebble!
+G4 P2000						; Dwell for 2s
+M106 S0							; Fan Off
+G1 X326 F24000					; Move to brush
+G10								; Retract
+
+G1 Y168 F24000					; Brush 1
+G1 Y130 						; Back
+G1 Y168 						; Brush 2
+G1 Y130 						; Back
+G1 Y188 F50000					; Brush 3
+
+G92 E0							; Reset extruder

@@ -1,0 +1,5 @@
+global parkX = 331
+global parkY = 176
+global brushLength = 40
+global brushWidth = 8
+global brushGap = 20
