@@ -1,33 +1,17 @@
-;Safe target
-G1 X315 Y110 F50000
+; PRIME
+;M98 P"/macros/Park Head"
 
-;Brush in
-G1 X315 Y110
-G1 X{331.0-4} Y110
-G1 X{331.0-4} Y125
-G1 X{331.0-2} Y155
-G1 X{331.0+2} Y125
-G1 X{331.0+4} Y155
-
-;Park for prime
-M98 P"/macros/Park Head"
-
-;Prime
-G1 E20 F1000 ; fill 'er up
-G10          ; retract
-G4 S2        ; wait for ooze
-
-;Run Out
-G1 X331 Y160 F50000
+G1 E10 F200		; fill 'er up
+G10				; Retract
+G4 S2			; wait for ooze
 
 ;Brush Out
-G1 X{331.0-5} Y155
-G1 X{331.0+5} Y150
-G1 X{331.0-5} Y145
-G1 X{331.0+5} Y140
-G1 X{331.0-5} Y135
-G1 X{331.0+5} Y130
-G1 X{331.0-5} Y125
-G1 X{331.0+5} Y120
-G1 X331.0 Y110
-G2 X315 Y94 R16
+G1 X{global.parkX - ((global.brushWidth / 2) + 1)} Y{global.parkY + global.brushGap + ((global.brushLength/6) * 1)} F50000
+G1 X{global.parkX + ((global.brushWidth / 2) + 1)} Y{global.parkY + global.brushGap + ((global.brushLength/6) * 2)}
+G1 X{global.parkX - ((global.brushWidth / 2) + 1)} Y{global.parkY + global.brushGap + ((global.brushLength/6) * 3)}
+G1 X{global.parkX + ((global.brushWidth / 2) + 1)} Y{global.parkY + global.brushGap + ((global.brushLength/6) * 4)}
+G1 X{global.parkX - ((global.brushWidth / 2) + 1)} Y{global.parkY + global.brushGap + ((global.brushLength/6) * 5)}
+G1 X{global.parkX + ((global.brushWidth / 2) + 1)} Y{global.parkY + global.brushGap + ((global.brushLength/6) * 6)}
+G1 X{global.parkX + ((global.brushWidth / 2) + 1)} Y{global.parkY + global.brushGap + ((global.brushLength/6) * 7)}
+
+;M98 P"/macros/Park Head"

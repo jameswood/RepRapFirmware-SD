@@ -1,4 +1,5 @@
 ; tpost3.g
 ; called after tool 3 has been selected
-M116 P3        ; heatup
+set global.parkX = 315
+set global.parkY = 128
 M98 P"tpost.g" ; standards

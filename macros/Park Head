@@ -1,1 +1,6 @@
-G1 X331 Y176 F50000
+if global.parkX > 150
+	G1 X{global.parkX - 20} F50000
+elif global.parkX < 150
+	G1 X{global.parkX + 20} F50000
+G1 Y{global.parkY} F50000
+G1 X{global.parkX} Y{global.parkY} F50000
