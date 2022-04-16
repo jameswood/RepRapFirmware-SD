@@ -1,17 +1,28 @@
 ; PRIME
-;M98 P"/macros/Park Head"
+M280 P7 S600					; Launch previous Pebble
+G4 P500							; Wait for servo
+M280 P7 S2200					; Reset Servo
 
-G1 E10 F200		; fill 'er up
-G10				; Retract
-G4 S2			; wait for ooze
+M98 P"0:/macros/Park Head"
+M116 P{state.currentTool}		; Wait for tool temp
 
-;Brush Out
-G1 X{global.parkX - ((global.brushWidth / 2) + 1)} Y{global.parkY + global.brushGap + ((global.brushLength/6) * 1)} F50000
-G1 X{global.parkX + ((global.brushWidth / 2) + 1)} Y{global.parkY + global.brushGap + ((global.brushLength/6) * 2)}
-G1 X{global.parkX - ((global.brushWidth / 2) + 1)} Y{global.parkY + global.brushGap + ((global.brushLength/6) * 3)}
-G1 X{global.parkX + ((global.brushWidth / 2) + 1)} Y{global.parkY + global.brushGap + ((global.brushLength/6) * 4)}
-G1 X{global.parkX - ((global.brushWidth / 2) + 1)} Y{global.parkY + global.brushGap + ((global.brushLength/6) * 5)}
-G1 X{global.parkX + ((global.brushWidth / 2) + 1)} Y{global.parkY + global.brushGap + ((global.brushLength/6) * 6)}
-G1 X{global.parkX + ((global.brushWidth / 2) + 1)} Y{global.parkY + global.brushGap + ((global.brushLength/6) * 7)}
+G4 P200							; Wait for servo
+G1 X335 Y132 F24000				; Move head to Pebbletowne
 
-;M98 P"/macros/Park Head"
+M106 S255						; Cooling 100%
+G1 E24 F300	 					; Prime head and produce Pebble!
+G4 P2000						; Dwell for 2s
+M106 S0							; Fan Off
+G1 X326 F24000					; Move to brush
+G10								; Retract
+
+G1 Y168 F10000					; Brush 1
+G1 Y130 						; Back
+G1 Y168 F15000					; Brush 2
+G1 Y130 						; Back
+G1 Y168 F20000					; Brush 3
+G1 Y130 						; Back
+G1 Y188 F50000					; Brush 4
+G1 Y130 						; Back
+
+G92 E0							; Reset extruder

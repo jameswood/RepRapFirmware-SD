@@ -13,3 +13,13 @@ M703                        ; run config.g for selected filament
 
 if !move.axes[0].homed || !move.axes[1].homed || !move.axes[2].homed || !move.axes[3].homed
   G28                       ; Home all
+
+if heat.heaters[0].state != "active"
+  M291 R"Bed is not active" P"Print anyway?" S3
+
+G91 ; relative
+G1 Z5 F3000
+G90 ; absolute
+
+if state.currentTool >= 0
+  M98 P"0:/sys/prime.g"

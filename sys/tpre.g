@@ -4,6 +4,8 @@
 M98 P"/macros/Coupler - Lock" ; close coupler
 
 ; WARNING: ensure the bed is lowered enough before undocking the tool or it will crash *hard*
-if move.axes[2].userPosition < 20
-	G1 Z20 F50000
-G53 G1 Y150 F4000 ; ease it out
+;if move.axes[2].userPosition < 5
+G91					; relative
+G1 Z5 F50000		; drop bed
+G90					; absolute
+G53 G1 Y150 F4000	; ease tool out
