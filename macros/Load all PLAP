@@ -1,21 +1,16 @@
-;preheat all
-T0 P0
-T1 P0
-T2 P0
-T3 P0
-T-1 P0
+M98 P"0:/macros/Standby All"
 
 ;load all
 T0 P0
 M701 S"PLAP - Esun"
 
 T1 P0
-M701 S"PLAP - Esun 1"
+M701 S"PLAP - Esun"
 
 T2 P0
-M701 S"PLAP - Esun 2"
+M701 S"PLAP - Esun"
 
 T3 P0
-M701 S"PLAP - Esun 3"
+M701 S"PLAP - Esun"
 
 T-1 P0

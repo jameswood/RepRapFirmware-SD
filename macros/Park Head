@@ -1,6 +1,8 @@
-if global.parkX > 150
-	G1 X{global.parkX - 20} F50000
-elif global.parkX < 150
-	G1 X{global.parkX + 20} F50000
+if move.axes[0].userPosition != global.parkX
+	if global.parkX > 150
+		G1 X{global.parkX - 10} F50000
+	elif global.parkX < 150
+		G1 X{global.parkX + 10} F50000
+
 G1 Y{global.parkY} F50000
 G1 X{global.parkX} Y{global.parkY} F50000

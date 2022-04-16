@@ -1,8 +1,7 @@
 ; tpre1.g
 ; called before tool 1 is selected
 
-M98 P"/macros/Coupler - Unlock"	; Unlock Coupler
-G53 G1 X77.4 Y210 F50000		; Move to safe location
-G53 G1 Y{227.7-10}				; danger zone (no more X moves)
-G53 G1 Y227.7 F2500				; collect tool
-M98 P"tpre.g"					; standard steps
+set global.dockX = {global.dockX1}
+set global.dockY = {global.dockY1}
+
+M98 P"tpre.g"                   ; standard steps

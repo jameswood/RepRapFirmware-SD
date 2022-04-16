@@ -3,3 +3,18 @@ global parkY = 176
 global brushLength = 40
 global brushWidth = 8
 global brushGap = 20
+
+global safeYunloaded = 210
+global safeYloaded = 150
+
+global dockX0 = -12.2
+global dockY0 = 227.7
+global dockX1 = 77.4
+global dockY1 = 227.7
+global dockX2 = 212.9
+global dockY2 = 227.8
+global dockX3 = 303.0
+global dockY3 = 227.6
+
+global dockX = {global.dockX0}
+global dockY = {global.dockY0}

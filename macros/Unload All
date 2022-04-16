@@ -1,9 +1,4 @@
-;preheat all
-T0 P0
-T1 P0
-T2 P0
-T3 P0
-T-1 P0
+M98 P"0:/macros/Standby All"
 
 T0 P0
 M702

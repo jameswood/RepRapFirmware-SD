@@ -1,9 +1,4 @@
-T0 P0
-M703
-T1 P0
-M703
-T2 P0
-M703
-T3 P0
-M703
-T-1 P0
+M568 P0 A1			; Tool heater standby
+M568 P1 A1			; Tool heater standby
+M568 P2 A1			; Tool heater standby
+M568 P3 A1			; Tool heater standby
